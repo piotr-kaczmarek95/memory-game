@@ -1,0 +1,36 @@
+<app-main-menu *ngIf="menuVisible" (settingsConfirmed)="onSettingsConfirmed($event)"></app-main-menu>
+<app-alert *ngIf="alertVisible" [clockDisplayedValue]="clockDisplayedValue" [totalClicks]="totalClicks" (closeClicked)="onCloseAlertClicked()" (restartGameClicked)="onRestartGameClicked()"></app-alert>
+
+<div class="container">
+
+    <div class="sidebar">
+
+      <div>
+        <button (click)="openSettings()" class="game-button">New game</button>
+        <button (click)="restartGame()" class="game-button" [disabled]="totalPairs === 0">Restart</button>
+      </div>
+
+      <div>
+        <div class="game-stats">
+          <div>Pairs found</div>
+          <div>{{foundPairs}}/{{totalPairs}}</div>
+        </div>
+        <div class="game-stats">
+          <div>Total clicks</div>
+          <div>{{totalClicks}}</div>
+        </div>
+        <div class="game-stats">
+          <div>Time elapsed</div>
+          <div>{{clockDisplayedValue}}</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="board">
+        <div class="card-container" *ngFor="let id of cardsIndexes"
+            [ngStyle]="{width: containerWidth, height: containerHeight}">
+            <app-card [id]="id"></app-card>
+        </div>
+    </div>
+</div>

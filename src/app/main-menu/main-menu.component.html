@@ -1,0 +1,15 @@
+<div class="backdrop"></div>
+
+<div class="container">
+
+  <span class="title">Select board size:</span>
+  <div class="size-select">
+    <div *ngFor="let size of boardSizes; let i = index;">
+
+      <label for="size_{{i}}"><input type="radio" name="size_{{i}}" id="size_{{i}}" [(ngModel)]="selectedSize" [value]="size"> {{size[0]}} x {{size[1]}} </label>
+    </div>
+  </div>
+
+  <button (click)="setBoardSize()" class="game-button" [disabled]="!selectedSize">Start</button>
+
+</div>

@@ -1,0 +1,5 @@
+<div class="card" (click)="onCardSelected()" [ngStyle]="{'background-color': card?.found ? 'gainsboro' : 'slateblue'}" [@card]>
+    <img [src]="card?.imgUrl" [ngClass]="{'fade-out': card?.found, 'img-hidden': !card?.imgVisible}">
+</div>
+
+

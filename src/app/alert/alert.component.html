@@ -1,0 +1,19 @@
+<div class="backdrop" [@backdrop]></div>
+
+<div class="container" [@alert] (@alert.done)="unlockButtons()">
+
+  <span class="title">Game over!</span>
+  <div>It tooks you </div>
+  <div >{{clockDisplayedValue}}</div>
+  <div>and</div>
+  <div >{{totalClicks}} clicks</div>
+  <div>to win!</div>
+
+  <div class="buttons">
+    <button (click)="restartGame()" class="game-button" [disabled]="buttonsLocked">Start again</button>
+    <button (click)="closeAlert()" class="game-button" [disabled]="buttonsLocked">Close</button>
+  </div>
+
+</div>
+
+

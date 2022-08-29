@@ -1,0 +1,25 @@
+.container{
+    width: 100vw;
+    height: 100vh;
+    background-color: gainsboro;
+    margin: 0;
+    padding: 10px 0;
+}
+
+.title{
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 50px;
+  letter-spacing: 2px;
+}
+
+.title-container{
+  height: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.board-container{
+  height: 85%
+}
