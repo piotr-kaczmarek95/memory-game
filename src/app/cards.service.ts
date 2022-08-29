@@ -117,6 +117,8 @@ export class CardsService{
 
             if (card.id === id) {
 
+              if (card.found) return
+
                 const visibleCards = this.getAllVisibleCards()
                 const visibleCardsCounter = visibleCards.length
 
